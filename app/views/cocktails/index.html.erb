@@ -1,29 +1,26 @@
-<h1>Cocktails</h1>
-
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Doses</th>
-      <th>Ingredients</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.stars %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<h1 class="display-3">Coqueteis</h1>
+<div style="text-align: center">
+<button id="confettih1">Click me!</button>
+</div>
+<div class="container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card" style="width: 18rem;">
+        <img src="https://source.unsplash.com/random/400x400/?<%=cocktail.name%>" class="card-img-top" alt="<%=cocktail.name%>">
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name %></h5>
+          <p class="card-text">Ingredientes:
+          <ul>
+            <% cocktail.ingredients.each do |ingredient| %>
+            <li>
+              <%= ingredient.name.capitalize %>
+            </li>
+            <% end %>
+          </ul>
+          </p>
+          <%= link_to "Saiba mais", cocktail_path(cocktail), class: "btn btn-primary" %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
+  </div>
+</div>

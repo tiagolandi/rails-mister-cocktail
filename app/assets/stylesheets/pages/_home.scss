@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px
+}
+
+@media (max-width: 1000px) {
+  /* For a screen < 1000px, this CSS will be read */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 660px) {
+  /* For a screen < 660px, this CSS will be read */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+

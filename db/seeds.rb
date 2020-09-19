@@ -37,3 +37,12 @@ Ingredient.create(name: "menta")
 Ingredient.create(name: "morango")
 Ingredient.create(name: "pêssego")
 Ingredient.create(name: "goiaba")
+
+2 = daiquiri
+3 = pinacolada
+4 = mojito
+
+Dose.create(description: '300ml', ingredient: Ingredient.find_by(name:'cachaça'), cocktail: Cocktail.find(1))
+Dose.create(description: '1 unidade', ingredient: Ingredient.find_by(name:'limão'), cocktail: Cocktail.find(1))
+Dose.create(description: '1 colher de chá', ingredient: Ingredient.find_by(name:'açúcar'), cocktail: Cocktail.find(1))
+Dose.create(description: '100g', ingredient: Ingredient.find_by(name:'gelo'), cocktail: Cocktail.find(1))
